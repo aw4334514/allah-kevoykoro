@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Video Starts at 11s</title>
+</head>
+<body style="margin:0; background:#000;">
+  <video id="video" autoplay muted controls playsinline style="width:100vw; height:100vh; object-fit:cover;">
+    <source src="https://vz-d3a1c075-13c.b-cdn.net/3c318226-f9de-4292-a179-d3f3e19975ad/play_240p.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <script>
+    const video = document.getElementById('video');
+    video.currentTime = 11; // Jump to 11 seconds
+    video.play();
+  </script>
+</body>
+</html>
