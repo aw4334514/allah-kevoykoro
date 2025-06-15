@@ -2,33 +2,17 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Loop Video from 11s</title>
+  <title>Looped Video with Volume Boost</title>
 </head>
 <body style="margin:0; background:#000;">
-  <video id="myVideo" autoplay muted playsinline controls style="width:100vw; height:100vh; object-fit:cover;">
-    <source src="https://vz-d3a1c075-13c.b-cdn.net/3c318226-f9de-4292-a179-d3f3e19975ad/play_240p.mp4" type="video/mp4" />
+  <video id="myVideo" autoplay loop playsinline controls style="width:100vw; height:100vh; object-fit:cover;">
+    <source src="https://vz-d3a1c075-13c.b-cdn.net/3c318226-f9de-4292-a179-d3f3e19975ad/play_240p.mp4#t=11" type="video/mp4" />
     Your browser does not support the video tag.
   </video>
 
   <script>
     const video = document.getElementById('myVideo');
-    const loopStart = 11; // loop start time in seconds
-
-    // Start playback from 11s on load
-    video.currentTime = loopStart;
-
-    // When video ends, jump back to 11s and play again
-    video.addEventListener('ended', () => {
-      video.currentTime = loopStart;
-      video.play();
-    });
-
-    // In case browser fires 'ended' late, also check time continuously
-    video.addEventListener('timeupdate', () => {
-      if (video.currentTime < loopStart) {
-        video.currentTime = loopStart;
-      }
-    });
+    video.volume = 1.0; // max volume (range 0.0 to 1.0)
   </script>
 </body>
 </html>
